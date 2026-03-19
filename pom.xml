@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+<!--         Ваши зависимости-->
+         <!-- https://mvnrepository.com/artifact/junit/junit -->
+         <dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+             <version>4.13.2</version>
+             <scope>test</scope>
+         </dependency>
+        <!-- 1. САМОЕ ГЛАВНОЕ: Hibernate Core (включает JPA) -->
+        <!-- Эта зависимость тянет за собой все необходимое для работы Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.15.Final</version>  <!-- Старая версия -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>  <!-- Новый groupId -->
+            <artifactId>hibernate-core</artifactId>
+            <version>6.4.2.Final</version>  <!-- Новая версия -->
+        </dependency>
+
+        <!-- 2. ДРАЙВЕР БАЗЫ ДАННЫХ: MySQL Connector -->
+        <!-- Без него Hibernate не сможет физически соединиться с MySQL -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.2.0</version>
+        </dependency>
+     </dependencies>
+
+</project>
