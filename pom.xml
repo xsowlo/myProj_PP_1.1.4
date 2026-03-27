@@ -27,11 +27,6 @@
          </dependency>
         <!-- 1. САМОЕ ГЛАВНОЕ: Hibernate Core (включает JPA) -->
         <!-- Эта зависимость тянет за собой все необходимое для работы Hibernate -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.6.15.Final</version>  <!-- Старая версия -->
-        </dependency>
 
         <dependency>
             <groupId>org.hibernate.orm</groupId>  <!-- Новый groupId -->

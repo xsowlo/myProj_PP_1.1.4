@@ -1,11 +1,6 @@
 package jm.task.core.jdbc.util;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 import jm.task.core.jdbc.model.User;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
@@ -14,7 +9,7 @@ import java.util.Properties;
 
 public class Util {
 
-    public Util() {
+    private Util() {
 
     }
     private static SessionFactory sessionFactory;
@@ -54,6 +49,15 @@ public class Util {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+
+    public static void shutdown() {
+        if (sessionFactory != null && !sessionFactory.isClosed()) {
+            sessionFactory.close();
+            System.out.println("SessionFactory закрыт");
+        }
+    }
+
+
 
 
 }
